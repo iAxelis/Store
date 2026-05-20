@@ -1,179 +1,212 @@
 <!-- dashboard.component.html -->
 
-<div class="min-h-screen bg-gray-100 flex">
+<div class="min-h-screen bg-[#0f172a] text-white flex">
 
   <!-- Sidebar -->
-  <aside class="w-64 bg-slate-900 text-white hidden md:flex flex-col">
-    
-    <div class="p-6 text-2xl font-bold border-b border-slate-700">
-      Dashboard
+  <div class="w-20 hover:w-64 transition-all duration-300 bg-[#111827] flex flex-col group">
+
+    <!-- Logo -->
+    <div class="h-20 flex items-center justify-center border-b border-gray-800">
+      <h1 class="text-2xl font-bold text-cyan-400">A</h1>
     </div>
 
-    <nav class="flex-1 p-4 space-y-2">
+    <!-- Menu -->
+    <nav class="flex-1 mt-6 space-y-3 px-3">
 
-      <a href="#" class="flex items-center gap-3 p-3 rounded-lg bg-slate-800 hover:bg-slate-700 transition">
-        <span>🏠</span>
-        <span>Inicio</span>
+      <a href="#" class="flex items-center gap-4 p-3 rounded-xl hover:bg-cyan-500/20 transition">
+        <span class="text-2xl">📈</span>
+        <span class="hidden group-hover:block">Analytics</span>
       </a>
 
-      <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800 transition">
-        <span>📊</span>
-        <span>Estadísticas</span>
+      <a href="#" class="flex items-center gap-4 p-3 rounded-xl hover:bg-cyan-500/20 transition">
+        <span class="text-2xl">💬</span>
+        <span class="hidden group-hover:block">Mensajes</span>
       </a>
 
-      <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800 transition">
-        <span>👥</span>
-        <span>Usuarios</span>
+      <a href="#" class="flex items-center gap-4 p-3 rounded-xl hover:bg-cyan-500/20 transition">
+        <span class="text-2xl">📦</span>
+        <span class="hidden group-hover:block">Productos</span>
       </a>
 
-      <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800 transition">
-        <span>🛒</span>
-        <span>Ventas</span>
+      <a href="#" class="flex items-center gap-4 p-3 rounded-xl hover:bg-cyan-500/20 transition">
+        <span class="text-2xl">🧾</span>
+        <span class="hidden group-hover:block">Facturas</span>
       </a>
 
-      <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-slate-800 transition">
-        <span>⚙️</span>
-        <span>Configuración</span>
+      <a href="#" class="flex items-center gap-4 p-3 rounded-xl hover:bg-cyan-500/20 transition">
+        <span class="text-2xl">⚙️</span>
+        <span class="hidden group-hover:block">Ajustes</span>
       </a>
 
     </nav>
 
-    <div class="p-4 border-t border-slate-700">
-      <button class="w-full bg-red-500 hover:bg-red-600 p-3 rounded-lg transition">
-        Cerrar sesión
-      </button>
+    <!-- User -->
+    <div class="p-4 border-t border-gray-800 flex items-center gap-3">
+      <img
+        src="https://i.pravatar.cc/50"
+        class="w-12 h-12 rounded-full"
+      />
+      <div class="hidden group-hover:block">
+        <h2 class="font-semibold">Alexis</h2>
+        <p class="text-sm text-gray-400">Administrador</p>
+      </div>
     </div>
 
-  </aside>
+  </div>
 
-  <!-- Main Content -->
-  <main class="flex-1">
+  <!-- Main -->
+  <div class="flex-1 flex flex-col">
 
-    <!-- Navbar -->
-    <header class="bg-white shadow px-6 py-4 flex justify-between items-center">
+    <!-- Topbar -->
+    <header class="h-20 bg-[#111827] border-b border-gray-800 flex items-center justify-between px-8">
 
       <div>
-        <h1 class="text-2xl font-bold text-gray-800">
-          Panel Principal
+        <h1 class="text-3xl font-bold">
+          Dashboard Moderno
         </h1>
-        <p class="text-gray-500 text-sm">
-          Bienvenido al dashboard
+        <p class="text-gray-400">
+          Resumen general del sistema
         </p>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-5">
 
-        <button class="relative">
+        <!-- Search -->
+        <div class="hidden md:flex items-center bg-[#1f2937] rounded-xl px-4 py-2">
+          <input
+            type="text"
+            placeholder="Buscar..."
+            class="bg-transparent outline-none text-white"
+          />
+        </div>
+
+        <!-- Notifications -->
+        <button class="relative bg-[#1f2937] p-3 rounded-xl hover:bg-[#374151] transition">
           🔔
-          <span class="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
-            3
-          </span>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
         </button>
-
-        <img
-          src="https://i.pravatar.cc/40"
-          alt="user"
-          class="w-10 h-10 rounded-full border"
-        />
 
       </div>
 
     </header>
 
-    <!-- Cards -->
-    <section class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Content -->
+    <main class="p-8 overflow-y-auto">
 
-      <div class="bg-white rounded-2xl shadow p-5">
-        <p class="text-gray-500">Usuarios</p>
-        <h2 class="text-3xl font-bold mt-2">1,245</h2>
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+        <!-- Card -->
+        <div class="bg-linear-to-r from-cyan-500 to-blue-500 p-6 rounded-3xl shadow-lg">
+          <p class="text-sm opacity-80">Ingresos</p>
+          <h2 class="text-4xl font-bold mt-3">$45,000</h2>
+          <p class="mt-2 text-sm">+15% este mes</p>
+        </div>
+
+        <div class="bg-[#1e293b] p-6 rounded-3xl shadow-lg">
+          <p class="text-gray-400">Clientes</p>
+          <h2 class="text-4xl font-bold mt-3">1,204</h2>
+          <p class="mt-2 text-green-400">+8 nuevos hoy</p>
+        </div>
+
+        <div class="bg-[#1e293b] p-6 rounded-3xl shadow-lg">
+          <p class="text-gray-400">Órdenes</p>
+          <h2 class="text-4xl font-bold mt-3">356</h2>
+          <p class="mt-2 text-yellow-400">12 pendientes</p>
+        </div>
+
+        <div class="bg-[#1e293b] p-6 rounded-3xl shadow-lg">
+          <p class="text-gray-400">Productos</p>
+          <h2 class="text-4xl font-bold mt-3">98</h2>
+          <p class="mt-2 text-red-400">5 agotados</p>
+        </div>
+
       </div>
 
-      <div class="bg-white rounded-2xl shadow p-5">
-        <p class="text-gray-500">Ventas</p>
-        <h2 class="text-3xl font-bold mt-2">$12,450</h2>
-      </div>
+      <!-- Two Columns -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
 
-      <div class="bg-white rounded-2xl shadow p-5">
-        <p class="text-gray-500">Pedidos</p>
-        <h2 class="text-3xl font-bold mt-2">320</h2>
-      </div>
+        <!-- Activity -->
+        <div class="xl:col-span-2 bg-[#1e293b] rounded-3xl p-6">
 
-      <div class="bg-white rounded-2xl shadow p-5">
-        <p class="text-gray-500">Productos</p>
-        <h2 class="text-3xl font-bold mt-2">87</h2>
-      </div>
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">
+              Actividad reciente
+            </h2>
 
-    </section>
+            <button class="bg-cyan-500 hover:bg-cyan-600 px-4 py-2 rounded-xl transition">
+              Ver más
+            </button>
+          </div>
 
-    <!-- Table -->
-    <section class="px-6 pb-6">
+          <div class="space-y-4">
 
-      <div class="bg-white rounded-2xl shadow overflow-hidden">
+            <div class="bg-[#0f172a] p-4 rounded-2xl flex justify-between items-center">
+              <div>
+                <h3 class="font-semibold">Nueva compra realizada</h3>
+                <p class="text-sm text-gray-400">
+                  Cliente: María López
+                </p>
+              </div>
+              <span class="text-green-400 font-bold">
+                +$320
+              </span>
+            </div>
 
-        <div class="p-5 border-b">
-          <h2 class="text-xl font-semibold">
-            Últimos usuarios
+            <div class="bg-[#0f172a] p-4 rounded-2xl flex justify-between items-center">
+              <div>
+                <h3 class="font-semibold">Nuevo usuario registrado</h3>
+                <p class="text-sm text-gray-400">
+                  Hace 10 minutos
+                </p>
+              </div>
+              <span class="text-cyan-400 font-bold">
+                Nuevo
+              </span>
+            </div>
+
+            <div class="bg-[#0f172a] p-4 rounded-2xl flex justify-between items-center">
+              <div>
+                <h3 class="font-semibold">Factura pagada</h3>
+                <p class="text-sm text-gray-400">
+                  Orden #4521
+                </p>
+              </div>
+              <span class="text-yellow-400 font-bold">
+                Completado
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Profile Card -->
+        <div class="bg-lienar-to-b from-cyan-500 to-blue-600 rounded-3xl p-6 flex flex-col items-center justify-center">
+
+          <img
+            src="https://i.pravatar.cc/120"
+            class="w-28 h-28 rounded-full border-4 border-white"
+          />
+
+          <h2 class="mt-5 text-2xl font-bold">
+            Alexis Vasquez
           </h2>
-        </div>
 
-        <div class="overflow-x-auto">
+          <p class="text-cyan-100">
+            Full Stack Developer
+          </p>
 
-          <table class="w-full text-left">
-
-            <thead class="bg-gray-100">
-              <tr>
-                <th class="p-4">Nombre</th>
-                <th class="p-4">Correo</th>
-                <th class="p-4">Estado</th>
-                <th class="p-4">Rol</th>
-              </tr>
-            </thead>
-
-            <tbody>
-
-              <tr class="border-b hover:bg-gray-50">
-                <td class="p-4">Juan Pérez</td>
-                <td class="p-4">juan@gmail.com</td>
-                <td class="p-4">
-                  <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                    Activo
-                  </span>
-                </td>
-                <td class="p-4">Admin</td>
-              </tr>
-
-              <tr class="border-b hover:bg-gray-50">
-                <td class="p-4">María López</td>
-                <td class="p-4">maria@gmail.com</td>
-                <td class="p-4">
-                  <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">
-                    Pendiente
-                  </span>
-                </td>
-                <td class="p-4">Editor</td>
-              </tr>
-
-              <tr class="hover:bg-gray-50">
-                <td class="p-4">Carlos Ruiz</td>
-                <td class="p-4">carlos@gmail.com</td>
-                <td class="p-4">
-                  <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">
-                    Inactivo
-                  </span>
-                </td>
-                <td class="p-4">Usuario</td>
-              </tr>
-
-            </tbody>
-
-          </table>
+          <button class="mt-6 bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition">
+            Ver Perfil
+          </button>
 
         </div>
 
       </div>
 
-    </section>
+    </main>
 
-  </main>
+  </div>
 
 </div>

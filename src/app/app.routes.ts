@@ -6,7 +6,10 @@ export const routes: Routes = [
     {
         path: 'home',
         component: Home
-
+    },
+    {
+        path 'products'
+        component : Products
     },
     {
         path:"**",

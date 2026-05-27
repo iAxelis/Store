@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component,output } from '@angular/core';
 
 @Component({
   selector: 'app-new-product',
@@ -11,4 +11,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NewProduct {}
+export class NewProduct {
+  onCancel = output<void>();
+
+  cancelar() {
+    this.onCancel.emit(); // Emitimos el evento
+  }
+}

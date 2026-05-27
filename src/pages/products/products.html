@@ -1,20 +1,51 @@
 <div class="m-8 flex justify-center">
-  <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md max-w-xl w-full">
-    <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
-      <thead class="bg-gray-50">
-        <tr>
-          <th class="px-6 py-4 font-medium text-gray-900">Producto</th>
-          <th class="px-6 py-4 font-medium text-gray-900">Cantidad</th>
-          <th class="px-6 py-4 font-medium text-gray-900">Precio</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-        <tr class="hover:bg-gray-50">
-          <td class="px-6 py-4 font-medium text-gray-900">Manzanas</td>
-          <td class="px-6 py-4">10</td>
-          <td class="px-6 py-4">$5.00</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="max-w-xl w-full flex flex-col gap-4">
+
+    <div class="flex justify-end">
+      <button
+        (click)="openModal()"
+        class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors shadow-sm"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        Agregar Producto
+      </button>
+    </div>
+
+    <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+      <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-6 py-4 font-medium text-gray-900">Producto</th>
+            <th class="px-6 py-4 font-medium text-gray-900">Cantidad</th>
+            <th class="px-6 py-4 font-medium text-gray-900">Precio</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4 font-medium text-gray-900">Manzanas</td>
+            <td class="px-6 py-4">10</td>
+            <td class="px-6 py-4">$5.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </div>
+
+@if (isModalOpen()) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+
+    <div class="bg-white rounded-xl p-6 shadow-2xl w-full max-w-md mx-4 relative">
+
+      <button (click)="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-semibold leading-none">&times;</button>
+
+      <h3 class="text-lg font-bold text-gray-900 mb-5">Agregar Nuevo Producto</h3>
+
+      <app-new-product></app-new-product>
+
+    </div>
+  </div>
+}
